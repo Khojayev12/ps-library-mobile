@@ -1,0 +1,490 @@
+.Mylink{
+    color: unset;
+    text-decoration: none;
+}
+.books-page{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgb(238, 238, 238);
+    top: 0px;
+    left: 0px;
+    z-index: 150;
+}
+.books-header{
+    z-index: 151;
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    left: 82px;
+    top: 32px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 20px;
+    /* identical to box height, or 95% */
+    
+    text-align: center;
+    letter-spacing: 0.04em;
+    
+    color: #334257;
+}
+
+.search-icon{
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    z-index: 151;
+}
+
+.book-menu{
+    width: 100vw;
+    height: calc(100vh - 62px);
+    position: fixed;
+    top: 62px;
+    left: 0px;
+    transition: 0.3s;
+    z-index: 153;
+    background-color: rgb(238, 238, 238);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.book-active{
+    transform: translateY(0px);
+}
+.book-not-active{
+    transform: translateY(200vh);
+}
+.book-bg{
+    width: 100vw;
+    transition: 0.3s;
+    z-index: 152;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.3);
+    filter: blur(20px);
+}
+
+.book-xmark{
+    position: fixed;
+    top: 30px;
+    left: 28px;
+}
+.mavjud{
+    position: fixed;
+    top: 30px;
+    right: 28px;
+    font-size: 17px;
+    color: green;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%;
+    text-align: center;
+    /* identical to box height, or 43px */
+    letter-spacing: 0.06em;
+}
+.mavjud-emas{
+    position: fixed;
+    top: 30px;
+    right: 28px;
+    font-size: 17px;
+    color: red;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%;
+    text-align: center;
+    /* identical to box height, or 43px */
+    letter-spacing: 0.06em;
+}
+.book-big{
+    width: 70vw;
+    margin-left: 15vw;
+}
+.book-name-head{
+    height: 44px;
+    width: 320px;
+    margin-left: calc((100vw - 320px) / 2);
+    margin-top: 18px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 150%;
+    text-align: center;
+    /* identical to box height, or 43px */
+    letter-spacing: 0.06em;
+    text-transform: capitalize;
+    color: #334257;
+}
+.book-mini-div{
+    position: absolute;
+    height: 75vh;
+    top: 70px;
+    width: 100vw;
+    overflow: auto;
+}
+.book-name-author{
+    width: 320px;
+    height: 20px;
+    margin-left: calc((100vw - 320px) / 2);
+    margin-top: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 150%;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(71, 96, 114, 0.5);
+}
+.book-about-it{
+    width: 70vw;
+    margin-left: 15vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+}
+.book-navbat{
+    width: 100vw;
+    height: 83px;
+    position: fixed;
+    bottom: 25px;
+    top: calc(100vh - 143px);
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0px 0px 15px 35px rgb(238, 238, 238);
+}
+.orders-page{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(238, 238, 238);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 180;
+}
+.for-scroll{
+    width: 100vw;
+    position: absolute;
+    top: 67px;
+    overflow: auto;
+    height: calc(100vh - 93px);
+}
+.order-component{
+    width: calc(100vw - 58px);
+    margin-left: 28px;
+    margin-top: 21px;
+}
+.order-img{
+    display: inline-block;
+    width: 90px;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    padding: 0px;
+}
+.order-book-img{
+    width: 100%;
+    border-radius: 3px;
+    margin: 0px;
+    margin-bottom: -15px;
+}
+.order-book-text{
+    width: calc(100% - 90px);
+    display: inline-block;
+}
+.order-book-name{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: #334257;
+    margin: 2px 15px;
+}
+.order-book-author{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: rgba(71, 96, 114, 0.5);
+    margin: 2px 15px;
+}
+.order-book-date{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: #334257;
+    margin: 2px 15px;
+}
+.order-book-status{
+    display: block;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: #334257;
+    margin: 2px 15px;
+}
+.profil-page{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(238, 238, 238);
+    z-index: 190;
+}
+.profil-header{
+    position: fixed;
+    top: 30px;
+    width: 70px;
+    left: calc(50vw - 35px);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #334257;
+}
+.profil-img{
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+}
+.profil-email{
+    display: inline-block;
+    position: absolute;
+    top: 142px;
+    margin-left: 26px;
+    text-align: center;
+    height: 90px;
+    justify-content: center;
+    margin-top: -32px;
+}
+.profil-name{
+    text-align: start;
+    height: 32px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 21px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: #334257;
+}
+.profil-email-info{
+    height: 26px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 150%;
+    color: rgba(71, 96, 114, 0.5);
+}
+.profil-link{
+    height: 30px;
+    width: 80vw;
+}
+.profil-link-menu{
+    height: 30px;
+    margin-left: 0px;
+    margin-top: 0px;
+
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: #334257;
+}
+.profil-link-icon{
+    position: absolute;
+    top: 238px;
+    right: 30px;
+}
+.settings-save{
+    position: absolute;
+    width: 55px;
+    height: 20px;
+    right: 28px;
+    top: 31px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #548CA8;
+}
+.settings-container{
+    position: fixed;
+    top:115px
+}
+.settings-img{
+    position: fixed;
+    width:110px;
+    height:110px;
+    left: calc(50vw - 55px);
+}
+.setting-add-img{
+    position: fixed;
+    width: 150px;
+    height: 20px;
+    left: calc(50vw - 75px);
+    top: 239px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #548CA8;
+}
+.setting-input{
+    position: fixed;
+    background: #E0E0E0;
+    border: 2px solid rgba(71, 96, 114, 0.1);
+    border-radius: 13px;
+    font-family: IBM Plex Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 19px;
+    color: #476072;
+    height: 50px;
+    width: calc(80vw - 23px);
+    left: 10vw;
+    top: 292px;
+    padding-left: 23px;
+}
+.change-lang-page{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(238, 238, 238);
+    z-index: 200;
+}
+.language-set{
+    background-color: #E0E0E0;
+    border: #E0E0E0 2px solid;
+    border-radius: 5px;
+    width: 90vw;
+    height: 50px;
+    margin-left: 5vw;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    color: #334257;
+}
+.lang-tick{
+    display: inline-block;
+    margin-left: 60vw;
+}
+.lang-change-selection{
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 15.5px;
+}
+.download-link{
+    text-decoration: underline;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    color: #334257;
+    margin-left: calc(100vw - 200px - 100px - 50px);
+    margin-top: 16px;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+}
+
+.pdf-page{
+    width: 100vw;
+    height: 100vh;
+    z-index:160;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(238, 238, 238);
+
+}
+.pdf-opener{
+    width: 95vw;
+    height: calc(100vh - 100px);
+    margin-left: 2.5vw;
+}
+.searchBar{
+    width: calc(99vw - 30px);
+    height: calc(100vh - 160px);
+    background-color: rgb(238, 238, 238);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: fixed;
+    top: 160px;
+    left: 0.5vw;
+    z-index: 10;
+    border: 1px #E2E2E2 solid;
+    transition: 0.5s all;
+    padding: 15px;
+    overflow-y: auto;
+}
+.searchA{
+    transform: translateY(0px);
+}
+.searchN{
+    transform: translateY(100vh);
+}
+.home-search{
+    height: 160px;
+    overflow-y: unset;
+}
+.search-closer-icon{
+    position: absolute;
+    right: 55.9px;
+    top: 107.9px;
+    z-index: 3;
+    width: 20px;
+}
+.search-result{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(238, 238, 238);
+    border-bottom: 1px solid #E2E2E2;
+    margin-top: 10px;
+    z-index: 1600;
+}
+.with-shadov{
+    box-shadow: 0px 0px 15px 3px rgba(160, 160, 160, 0.3);;
+}
