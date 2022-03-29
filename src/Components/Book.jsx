@@ -6,7 +6,6 @@ import { styled } from '@mui/material/styles';
 import { useState } from "react";
 
 export default function Book(props){
-    const [ book, setBook] = useState(props.book)
     const MenuButton = styled(Button)((filled) => ({
         textAlign: "center",
         padding: "5px 34px",
@@ -48,13 +47,13 @@ export default function Book(props){
         <>
         <div className={props.state? "book-menu book-active":" book-menu book-not-active"}>
             <img src={Xmark} alt="" className="book-xmark" onClick={props.func} />
-            {book.isAvailable ? <span className="mavjud">Mavjud</span>:<span className="mavjud-emas">Mavjud emas</span>}
+            {props.book.isAvailable ? <span className="mavjud">Mavjud</span>:<span className="mavjud-emas">Mavjud emas</span>}
             <div className="book-mini-div">
-                <img src={book.image} alt="" className="book-big" />
-                <div className="book-name-head" >Stiv Jobs </div>
-                <div className="book-name-author" >Uolter ayzokson </div>
-                <MenuButton>Biografiya</MenuButton>
-                <div className="book-about-it"></div>
+                <img src={props.book.image} alt="" className="book-big" />
+                <div className="book-name-head" >{props.book.name} </div>
+                <div className="book-name-author" >{props.book.author}</div>
+                <MenuButton>{props.book.genre[0].toUpperCase() + props.book.genre.slice(1, props.book.genre.length)}</MenuButton>
+                <div className="book-about-it">{props.book.description || ""}</div>
             </div>
             <div className="book-navbat">
                 <NavbatgaYozilish>Navbatga yozilish</NavbatgaYozilish>

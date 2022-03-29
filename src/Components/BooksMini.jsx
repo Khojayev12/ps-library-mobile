@@ -15,7 +15,7 @@ export default function BookMini(props){
             <span className="kitob-card-head" style={{zIndex:isBookOpen?"100":"160"}} > {props.book.name?.length > 10 ? props.book.name?.slice(0,10) + "..." : props.book.name} </span>
             <span className="kitob-card-footer" style={{zIndex:isBookOpen?"100":"160"}} > {props.book.author} </span>
         </Box>
-       <Book func={close} state={isBookOpen} />
+       <Book func={close} state={isBookOpen} book={props.book} />
         </>
     )
 }
