@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://api.library.mcpeblocker.uz/api',
+    baseURL: 'https://api.library.mcpeblocker.uz/api',
     mode: 'no-cors',
     headers: {
         "Access-Control-Allow-Origin": "*",

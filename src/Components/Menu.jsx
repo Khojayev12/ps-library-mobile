@@ -71,10 +71,12 @@ export default function Menu(){
                     <img src={home} alt="" className="menu-btn-icons"/>
                     {lang.main}
                 </MenuButton>
+                <Link to="/all-books" className="Mylink" >
                 <MenuButton className="menu-btn">
                     <img src={kitob} alt="" className="menu-btn-icons"/>
                     {lang.kitoblar}
                 </MenuButton>
+                </Link>
                 <Link to="/orders" className="Mylink" > <MenuButton className="menu-btn">
                     <img src={buyurtma} alt="" className="menu-btn-icons"/>
                     {lang.buyurtmalar}
