@@ -1,9 +1,6 @@
 import Xmark from "../Icons/xmark.svg"
-import {MdDone} from "react-icons/md"
-import Kitob1 from "../Media/kitob15.svg"
 import { Button } from "@mui/material";
 import { styled } from '@mui/material/styles';
-import { useState } from "react";
 
 export default function Book(props){
     const MenuButton = styled(Button)((filled) => ({

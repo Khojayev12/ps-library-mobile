@@ -10,12 +10,14 @@ import api from "../api";
 export default function Books() {
   const [books, setBooks] = useState([]);
 
-  useEffect(async () => {
-    const response = await api.get("/books");
-    if (response.status === 200) {
-      setBooks(response.data);
-      console.log(response);
-    }
+  useEffect(() => {
+    (async () => {
+      const response = await api.get("/books");
+      if (response.status === 200) {
+        setBooks(response.data);
+        console.log(response);
+      }
+    })();
   }, []);
   return (
     <LanguageContext.Consumer>
@@ -38,7 +40,7 @@ export default function Books() {
           </Link>
           <div className="for-scroll" style={{ marginTop: "44px" }}>
             {books.map((book) => (
-              <BookMini key={book.bookId} book={book} />
+              <BookMini key={book._id} book={book} />
             ))}
           </div>
         </div>
