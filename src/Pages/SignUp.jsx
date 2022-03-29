@@ -83,7 +83,7 @@ export default function SignUp() {
               className="gradient-border"
               style={{
                 top: "246px",
-                display: selectedInput == "name" ? "block" : "none",
+                display: selectedInput === "name" ? "block" : "none",
               }}
             ></div>
             <input
@@ -104,7 +104,7 @@ export default function SignUp() {
               className="gradient-border"
               style={{
                 top: "362px",
-                display: selectedInput == "email" ? "block" : "none",
+                display: selectedInput === "email" ? "block" : "none",
               }}
             ></div>
             <input
@@ -125,7 +125,7 @@ export default function SignUp() {
               className="gradient-border"
               style={{
                 top: "481px",
-                display: selectedInput == "password" ? "block" : "none",
+                display: selectedInput === "password" ? "block" : "none",
               }}
             ></div>
             <input
