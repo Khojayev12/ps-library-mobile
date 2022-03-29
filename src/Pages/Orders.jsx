@@ -19,7 +19,6 @@ export default function Orders() {
       });
       if (response.status === 200) {
         setOrders(response.data);
-        console.log(response.data);
       }
     })();
   }, []);
@@ -36,6 +35,17 @@ export default function Orders() {
           </Link>
           <span className="books-header">{lang.buyurtmalar}</span>
           <div className="for-scroll">
+            {orders.length === 0 && (
+              <>
+                <br />
+                <br />
+                <br />
+                <br />
+                <p className="order-book-name" align="center">
+                  Hozircha sizda buyurtma mavjud emas.
+                </p>
+              </>
+            )}
             {orders.map((order) => (
               <OrderBook key={order._id} order={order} />
             ))}
