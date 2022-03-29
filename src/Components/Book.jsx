@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import { useState } from "react";
 
 export default function Book(props){
-    const [ isAvailable, setIsAvailable] = useState(true)
+    const [ book, setBook] = useState(props.book)
     const MenuButton = styled(Button)((filled) => ({
         textAlign: "center",
         padding: "5px 34px",
@@ -48,13 +48,13 @@ export default function Book(props){
         <>
         <div className={props.state? "book-menu book-active":" book-menu book-not-active"}>
             <img src={Xmark} alt="" className="book-xmark" onClick={props.func} />
-            {isAvailable? <span className="mavjud">Mavjud</span>:<span className="mavjud-emas">Mavjud emas</span>}
+            {book.isAvailable ? <span className="mavjud">Mavjud</span>:<span className="mavjud-emas">Mavjud emas</span>}
             <div className="book-mini-div">
-                <img src={Kitob1} alt="" className="book-big" />
+                <img src={book.image} alt="" className="book-big" />
                 <div className="book-name-head" >Stiv Jobs </div>
                 <div className="book-name-author" >Uolter ayzokson </div>
                 <MenuButton>Biografiya</MenuButton>
-                <div className="book-about-it">srgsergs serg serg segrsedrgsr sergsergse sergsergse sedrgsedrgs sergsedrgsered serhsedrthsre esdrtsreghs serhgserghesr sergsgrt serthserg erthsrethsg srtghsresghre srhgsrg sredgrsd srthsrhs srhtsr srgsergs serg serg segrsedrgsr sergsergse sergsergse sedrgsedrgs sergsedrgsered serhsedrthsre esdrtsreghs serhgserghesr sergsgrt serthserg erthsrsrgsergs serg serg segrsedrgsr sergsergse sergsergse sedrgsedrgs sergsedrgsered serhsedrthsre esdrtsreghs serhgserghesr sergsgrt serthserg erthsrsrgsergs serg serg segrsedrgsr sergsergse sergsergse sedrgsedrgs sergsedrgsered serhsedrthsre esdrtsreghs serhgserghesr sergsgrt serthserg erthsrsrgsergs serg serg segrsedrgsr sergsergse sergsergse sedrgsedrgs sergsedrgsered serhsedrthsre esdrtsreghs serhgserghesr sergsgrt serthserg erthsr</div>
+                <div className="book-about-it"></div>
             </div>
             <div className="book-navbat">
                 <NavbatgaYozilish>Navbatga yozilish</NavbatgaYozilish>

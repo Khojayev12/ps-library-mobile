@@ -4,8 +4,18 @@ import IconBtn from "../Components/IconBtn";
 import { Box } from "@mui/system";
 import BookMini from "../Components/BooksMini";
 import Poisk from "../Icons/poisk.svg"
+import { useEffect, useState } from "react";
+import api from "../api";
 
 export default function Books(){
+
+    const [books, setBooks] = useState([]);
+
+    useEffect(async () => {
+        const response = await api.get('/books');
+        console.log(response);
+    }, []);
+
     return(
         <LanguageContext.Consumer>
             {lang=>(
