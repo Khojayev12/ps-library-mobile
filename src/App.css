@@ -281,6 +281,11 @@ body{
   margin-left: 75vw;
   z-index: 100;
 }
+.kitob-card-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .kitob-card-img{
   width: 100%;

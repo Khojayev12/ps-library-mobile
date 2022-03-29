@@ -3,7 +3,6 @@ import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import IconBtn from "../Components/IconBtn";
 import Foto from "../Media/profilFoto.svg"
-import ToRIght from "../Icons/toRight.svg"
 
 export default function ProfilSettings(){
     return(

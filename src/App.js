@@ -73,7 +73,7 @@ export const en = {
 }
 
 function App() {
-  const [lang, setLang] = useState(uz)
+  const [lang] = useState(uz)
   return (
     <div className="App">
       <BrowserRouter>
