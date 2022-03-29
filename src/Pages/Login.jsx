@@ -84,7 +84,7 @@ export default function Login() {
               className="gradient-border"
               style={{
                 top: "274px",
-                display: selectedInput == "email" ? "block" : "none",
+                display: selectedInput === "email" ? "block" : "none",
               }}
             ></div>
             <input
@@ -105,7 +105,7 @@ export default function Login() {
               className="gradient-border"
               style={{
                 top: "393px",
-                display: selectedInput == "password" ? "block" : "none",
+                display: selectedInput === "password" ? "block" : "none",
               }}
             ></div>
             <input

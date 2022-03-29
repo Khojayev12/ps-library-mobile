@@ -49,7 +49,7 @@ export default function Book(props){
                 <img src={props.book.image} alt="" className="book-big" />
                 <div className="book-name-head" >{props.book.name} </div>
                 <div className="book-name-author" >{props.book.author}</div>
-                <MenuButton>{props.book.genre[0].toUpperCase() + props.book.genre.slice(1, props.book.genre.length)}</MenuButton>
+                <MenuButton>{props.book.genre[0]?.toUpperCase() + props.book.genre?.slice(1, props.book.genre.length)}</MenuButton>
                 <div className="book-about-it">{props.book.description || ""}</div>
             </div>
             <div className="book-navbat">
