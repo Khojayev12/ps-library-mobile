@@ -27,7 +27,7 @@ export default function Books(props) {
         console.log(response);
       }
     })();
-  }, []);
+  });
   return (
     <LanguageContext.Consumer>
       {(lang) => (
