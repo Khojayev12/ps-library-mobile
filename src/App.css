@@ -627,6 +627,29 @@ body{
   z-index: 60;
 
 }
+.guide-page{
+  position: absolute;
+  top: 128px;
+  left: 5%;
+}
+.about-page{
+  position: absolute;
+  top: 64px;
+  left: 5%;
+  width: 90%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 20px;
+  /* identical to box height, or 118% */
+
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #334257;
+}
+
+
 
 
 

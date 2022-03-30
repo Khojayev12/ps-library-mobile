@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import { LanguageContext } from "../LanguageContext";
 import hamburger from '../Icons/hamburger.svg'
-import avatar from "../Icons/avatar.svg"
+import avatar from "../Icons/avatar.png"
 import home from "../Icons/home.svg"
 import kitob from "../Icons/kitob.svg"
 import buyurtma from "../Icons/buyurtma.svg"
@@ -83,14 +83,16 @@ export default function Menu(){
                     <img src={settings} alt="" className="menu-btn-icons"/>
                     {lang.settings}</Link>
                 </MenuButton>
+                <Link to="/guide" className="Mylink" >
                 <MenuButton className="menu-btn" onClick={()=>{setIsMenuOpen(false)}} >
                     <img src={video} alt="" className="menu-btn-icons"/>
                     {lang.qollanma}
-                </MenuButton>
+                </MenuButton></Link>
+                <Link to="/about" className="Mylink" >
                 <MenuButton className="menu-btn" onClick={()=>{setIsMenuOpen(false)}} >
                     <img src={savol} alt="" className="menu-btn-icons"/>
                     {lang.about}
-                </MenuButton>
+                </MenuButton></Link>
             </Box>
             <div className={isLMenuOpen? "LMenu L-open" : "LMenu L-closed"} >
                 <div className="Lmenu-line" onClick={()=>{setIsLMenuOpen(false)}} > <Link to="/profile" className="Mylink" >

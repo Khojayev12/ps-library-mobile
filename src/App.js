@@ -14,6 +14,8 @@ import Profil from './Pages/Profil';
 import ProfilSettings from "./Pages/ProfileSettings"
 import ChangeLang from './Pages/ChangeLang';
 import axios from 'axios';
+import About from './Pages/About';
+import Guide from './Pages/Guide';
 
 export const uz = {
   header:"Maktab kutubxonasi",
@@ -48,7 +50,9 @@ export const uz = {
   Mavjud:"Mavjud",
   MavjudEmas:"Mavjud emas",
   navbaty:"Navbatga yozilish",
-  hozirchayoq:"Hozircha sizda buyurtma mavjud emas."
+  hozirchayoq:"Hozircha sizda buyurtma mavjud emas.",
+  aboutHeader:"Ilova haqida",
+  aboutInfo:""
 }
 
 
@@ -85,7 +89,9 @@ export const en = {
   Mavjud:"Available",
   MavjudEmas:"Not available",
   navbaty:"add to que",
-  hozirchayoq:"You haven't any orders"
+  hozirchayoq:"You haven't any orders",
+  aboutHeader:"About app",
+  aboutInfo:""
 }
 
 const api = axios.create({
@@ -110,6 +116,8 @@ function App() {
           <Route path='/register' element={<SignUp api={api} />}/>
           <Route path='/login' element={<Login api={api} />}/>
           <Route path='/start' element={<Start api={api} />}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/guide' element={<Guide/>}/>
           <Route path='/' element={<Home isSearchActive={isSearchActive} setIsSearchActive={setIsSearchActive} api={api} />}/>
           <Route path="*" element={<Start api={api} />} />
         </Routes>

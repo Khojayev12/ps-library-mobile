@@ -51,18 +51,24 @@ export default function Home(props) {
         setGenres(genresRes.data);
       }
     })();
-  }, []);
+  }, [navigate]);
 
   const uzunliq = (string) => {
-    if (string.length > 10) {
-      return string.slice(0, 13) + "...";
+    if (string.length > 8) {
+      return string.slice(0, 8) + "...";
     } else {
       return string;
     }
   };
+
+  const handleJanr = (genre) => {
+    navigate('/all-books?genre=' + genre);
+  }
+
   const JanrSolo = (props) => {
-    return <div className="janr-solo">{uzunliq(props.text)}</div>;
+    return <div className="janr-solo" onClick={() => handleJanr(props.text)}>{uzunliq(props.text)}</div>;
   };
+
   return (
     <div className="home">
       <LanguageContext.Consumer>

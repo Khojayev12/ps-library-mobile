@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { Button } from "@mui/material";
 import BackImg from "../Media/Intro.jpg";
 import { styled } from "@mui/material/styles";
-import Avatar from "../Icons/avatar.svg";
+import Avatar from "../Icons/avatar.png";
 import { Link } from "react-router-dom";
 
 export default function Start() {

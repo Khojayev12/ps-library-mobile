@@ -1,5 +1,5 @@
 import { LanguageContext } from "../LanguageContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import IconBtn from "../Components/IconBtn";
 import { Box } from "@mui/system";
 import BookMini from "../Components/BooksMini";
@@ -9,10 +9,19 @@ import api from "../api";
 
 export default function Books(props) {
   const [books, setBooks] = useState([]);
-
+  const { search } = useLocation()
+  
   useEffect(() => {
     (async () => {
-      const response = await api.get("/books");
+      let options = { params: {} };
+      if (search.includes("genre")) {
+        options.params.genre = search.slice(
+          search.indexOf("genre") + "genre".length + 1,
+          search.length
+        )
+      }
+      const response = await api.get("/books", options);
+      console.log(response)
       if (response.status === 200) {
         setBooks(response.data);
         console.log(response);
