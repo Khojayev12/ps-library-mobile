@@ -1,10 +1,8 @@
 import Xmark from "../Icons/xmark.svg";
-import Kitob1 from "../Media/kitob15.svg";
 import { Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { LanguageContext } from "../LanguageContext";
-import File from "../file.pdf";
 import PDFviewer from "./PDFviewer";
 import uz from "../App";
 
@@ -67,21 +65,21 @@ export default function Book(props) {
               onClick={props.func}
             />
             {props.isAvailable ? (
-              <span className="mavjud">Mavjud</span>
+              <span className="mavjud">{lang.Mavjud}</span>
             ) : (
-              <span className="mavjud-emas">Mavjud emas</span>
+              <span className="mavjud-emas">{lang.MavjudEmas}</span>
             )}
             <div className="book-mini-div">
               <img src={props.book.image} alt="" className="book-big" />
               <div className="book-name-head">
-                {lang == uz ? props.book.nameUZ : props.book.name}{" "}
+                {lang === uz ? props.book.nameUZ : props.book.name}{" "}
               </div>
               <div className="book-name-author">
                 {" "}
-                {lang == uz ? props.book.authorUZ : props.book.author}{" "}
+                {lang === uz ? props.book.authorUZ : props.book.author}{" "}
               </div>
               <MenuButton>{props.book.genre}</MenuButton>
-              <a
+              <p href="#"
                 download
                 className="download-link"
                 onClick={() => {
@@ -89,7 +87,7 @@ export default function Book(props) {
                 }}
               >
                 PDF
-              </a>
+              </p>
               <div className="book-about-it">
                 srgsergs serg serg segrsedrgsr sergsergse sergsergse sedrgsedrgs
                 sergsedrgsered serhsedrthsre esdrtsreghs serhgserghesr sergsgrt
@@ -108,18 +106,16 @@ export default function Book(props) {
               </div>
             </div>
             <div className="book-navbat">
-              <NavbatgaYozilish>Navbatga yozilish</NavbatgaYozilish>
+              <NavbatgaYozilish>{lang.navbaty}</NavbatgaYozilish>
             </div>
-          </div>{console.log(props.book.pdf)}
+          </div>
           {isPdfOpen ? (
             <>
               <PDFviewer
-                name={lang == uz ? props.book.nameUZ : props.book.name}
+                name={lang === uz ? props.book.nameUZ : props.book.name}
                 state={isPdfOpen}
                 setState={setIsPdfOpen}
-
                 urlPDF={props.book.pdf}
-                
               />
             </>
           ) : (

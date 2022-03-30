@@ -28,8 +28,6 @@ export const uz = {
   about:"Dastur haqida",
   janrla:"Janrlar",
   seeAll:"Barchasi...",
-  book1:"1984",
-  book12:"Jorj Ouell",
   register:"Registratsiya",
   nameSurname:"Ism, familiya:",
   parol:"Parol:",
@@ -41,37 +39,53 @@ export const uz = {
   signup:"Ro'yxatdan o'tish",
   notRegistered:"Ro'yxatdan o'tmaganmisiz?",
   goSignUp:"Ro'yxatdan o'ting",
-  enter:"Kirish"
+  enter:"Kirish",
+  profil:"Profil",
+  profilSozlash:"Profilni sozlash",
+  changeLang:"Ilova tilini o'zgartirish",
+  Sozlamalar:"Sozlamalar",
+  Saqlash:"Saqlash",
+  Mavjud:"Mavjud",
+  MavjudEmas:"Mavjud emas",
+  navbaty:"Navbatga yozilish",
+  hozirchayoq:"Hozircha sizda buyurtma mavjud emas."
 }
 
+
 export const en = {
-  header:"School's library",
+  header:"School library",
   qidirish:"Search",
   menuHeader:"School Library",
-  shior:"With us always easy :)",
+  shior:"It's always easy with us",
   main:"Main page",
   kitoblar:"Books",
   buyurtmalar:"Orders",
   settings:"Settings",
   qollanma:"Guide",
-  about:"About app",
+  about:"About the app",
   janrla:"Genres",
   seeAll:"View all...",
-  book1:"1984",
-  book12:"Jorj Ouell",
   register:"Registration",
-  nameSurname:"Name, surname:",
+  nameSurname:"Full name:",
   parol:"Password:",
-  enterName:"Enter your name and surname",
+  enterName:"Enter your full name",
   enterEmail:"Enter your email",
   enterParol:"Enter your password",
   alreadyRegisteres:"Are you already registered?",
   goLogin:"Log in",
   signup:"Sign up",
-  notRegistered:"Not registered?",
+  notRegistered:"Not signed up yet?",
   goSignUp:"Sign up",
-  enter:"Sign up"
-
+  enter:"Sign up",
+  profil:"Profile",
+  profilSozlash:"Profile settings",
+  changeLang:"Changing language",
+  Sozlamalar:"Settings",
+  Saqlash:"Save",
+  Mavjud:"Available",
+  MavjudEmas:"Not available",
+  navbaty:"add to que",
+  hozirchayoq:"You haven't any orders"
 }
 
 const api = axios.create({

@@ -22,7 +22,7 @@ export default function Orders() {
       }
     })();
   }, []);
-
+console.log(orders)
   return (
     <LanguageContext.Consumer>
       {(lang) => (
@@ -42,7 +42,7 @@ export default function Orders() {
                 <br />
                 <br />
                 <p className="order-book-name" align="center">
-                  Hozircha sizda buyurtma mavjud emas.
+                  {lang.hozirchayoq}
                 </p>
               </>
             )}

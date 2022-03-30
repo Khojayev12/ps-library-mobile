@@ -19,7 +19,6 @@ export default function Books(props) {
       }
     })();
   }, []);
-  console.log(books)
   return (
     <LanguageContext.Consumer>
       {(lang) => (

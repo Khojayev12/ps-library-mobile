@@ -10,12 +10,11 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import SearchResult from "../Components/SearchResult";
 
 export default function Home(props) {
-  const [isResultOpen, setIsResultOpen] = useState(false)
+  const [isResultOpen, setIsResultOpen] = useState(false);
   const [results, setResults] = useState([]);
   const [books, setBooks] = useState([]);
   const [genres, setGenres] = useState([]);
 
-  
   props.isSearchActive
     ? disableBodyScroll(document)
     : enableBodyScroll(document);
@@ -23,10 +22,10 @@ export default function Home(props) {
   const handleSearch = async (e) => {
     let text = e.target.value;
     if (!text) return;
-    const response = await api.get('/books', {
+    const response = await api.get("/books", {
       params: {
-        name: text
-      }
+        name: text,
+      },
     });
     if (response.status === 200) {
       setResults(response.data);
@@ -36,11 +35,11 @@ export default function Home(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let user = localStorage.getItem('user');
+    let user = localStorage.getItem("user");
     if (!user) {
-      navigate('/start');
+      navigate("/start");
       return;
-    } 
+    }
     (async () => {
       const booksRes = await api.get("/books");
       if (booksRes.status === 200) {
@@ -54,13 +53,13 @@ export default function Home(props) {
     })();
   }, []);
 
-  const uzunliq = (string)=>{
-    if(string.length>10){
-      return string.slice(0, 13) + "..."
-    } else{
-      return string
+  const uzunliq = (string) => {
+    if (string.length > 10) {
+      return string.slice(0, 13) + "...";
+    } else {
+      return string;
     }
-  }
+  };
   const JanrSolo = (props) => {
     return <div className="janr-solo">{uzunliq(props.text)}</div>;
   };
@@ -71,7 +70,14 @@ export default function Home(props) {
           <div>
             <div className="searchbar">
               <img src={Lupa} className="inline-icons" alt="" />
-              <input className="search" placeholder={lang.qidirish} onChange={handleSearch} onFocus={()=>{props.setIsSearchActive(true)}} />
+              <input
+                className="search"
+                placeholder={lang.qidirish}
+                onChange={handleSearch}
+                onFocus={() => {
+                  props.setIsSearchActive(true);
+                }}
+              />
               <img
                 src={XMark}
                 className="search-closer-icon"
@@ -93,11 +99,27 @@ export default function Home(props) {
                     ? "searchBar searchA"
                     : "searchBar searchN"
                 }
-                style={isResultOpen?{position:"fixed", top:"0px", left:"0px", zIndex:300, height:"100vh", borderRadius:"0px"}:{}}
+                style={
+                  isResultOpen
+                    ? {
+                        position: "fixed",
+                        top: "0px",
+                        left: "0px",
+                        zIndex: 300,
+                        height: "100vh",
+                        borderRadius: "0px",
+                      }
+                    : {}
+                }
               >
                 {results.map((book) => (
-                    <SearchResult key={book._id} book={book} isResultOpen={isResultOpen} setIsResultOpen={setIsResultOpen} />
-                  ))}
+                  <SearchResult
+                    key={book._id}
+                    book={book}
+                    isResultOpen={isResultOpen}
+                    setIsResultOpen={setIsResultOpen}
+                  />
+                ))}
                 <div style={{ marginBottom: "20vh" }}></div>
               </div>
               <Box component="div" className="ContentHome">

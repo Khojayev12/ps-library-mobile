@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { uz } from "../App";
 import { LanguageContext } from "../LanguageContext";
 import Book from "./Book";
