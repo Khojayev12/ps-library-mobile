@@ -1,5 +1,5 @@
 import { LanguageContext } from "../LanguageContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Lupa from "../Icons/lupa.svg";
 import XMark from "../Icons/xmark.svg";
 import { Box } from "@mui/system";
@@ -33,7 +33,14 @@ export default function Home(props) {
     }
   };
 
+  const navigate = useNavigate();
+
   useEffect(() => {
+    let user = localStorage.getItem('user');
+    if (!user) {
+      navigate('/start');
+      return;
+    } 
     (async () => {
       const booksRes = await api.get("/books");
       if (booksRes.status === 200) {

@@ -97,6 +97,7 @@ function App() {
           <Route path='/login' element={<Login api={api} />}/>
           <Route path='/start' element={<Start api={api} />}/>
           <Route path='/' element={<Home isSearchActive={isSearchActive} setIsSearchActive={setIsSearchActive} api={api} />}/>
+          <Route path="*" element={<Start api={api} />} />
         </Routes>
       </LanguageContext.Provider>
       </BrowserRouter>
