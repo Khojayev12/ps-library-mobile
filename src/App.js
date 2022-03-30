@@ -12,6 +12,7 @@ import Books from './Pages/Books';
 import Orders from './Pages/Orders';
 import Profil from './Pages/Profil';
 import ProfilSettings from "./Pages/ProfileSettings"
+import ChangeLang from './Pages/ChangeLang';
 
 export const uz = {
   header:"Maktab kutubxonasi",
@@ -74,20 +75,22 @@ export const en = {
 
 function App() {
   const [lang] = useState(uz)
+  const [isSearchActive, setIsSearchActive] = useState(false)
   return (
     <div className="App">
       <BrowserRouter>
       <LanguageContext.Provider value={lang}  >
         <Menu/>
         <Routes>
-          <Route path='/all-books' element={<Books/>}/>
-          <Route path='/orders' element={<Orders/>}/>
-          <Route path='/settings' element={<ProfilSettings/>}/>
-          <Route path='/profile' element={<Profil/>}/>
-          <Route path='/register' element={<SignUp/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/start' element={<Start/>}/>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/all-books' element={<Books setIsSearchActive={setIsSearchActive} api={api} />}  />
+          <Route path='/orders' element={<Orders api={api} />}/>
+          <Route path='/change-lang' element={<ChangeLang setUzbek={()=>{setLang(uz)}} setEnglish={()=>{setLang(en)}} />}/>
+          <Route path='/settings' element={<ProfilSettings api={api} />}/>
+          <Route path='/profile' element={<Profil api={api} />}/>
+          <Route path='/register' element={<SignUp api={api} />}/>
+          <Route path='/login' element={<Login api={api} />}/>
+          <Route path='/start' element={<Start api={api} />}/>
+          <Route path='/' element={<Home isSearchActive={isSearchActive} setIsSearchActive={setIsSearchActive} />} />
         </Routes>
       </LanguageContext.Provider>
       </BrowserRouter>
