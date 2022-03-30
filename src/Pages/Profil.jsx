@@ -4,8 +4,19 @@ import { Link } from "react-router-dom";
 import IconBtn from "../Components/IconBtn";
 import Foto from "../Media/person.webp"
 import ToRIght from "../Icons/toRight.svg"
+import { useState, useEffect } from "react";
 
 export default function Profil(){
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) return;
+        setName(user.name);
+        setEmail(user.email);
+    }, []);
+
     return(
         <LanguageContext.Consumer>
             {lang=>(
@@ -19,8 +30,8 @@ export default function Profil(){
                             <img src={Foto} alt="" className="profil-img"/>
                         </div>
                         <div className="profil-email">
-                            <div className="profil-name">Binnasa Xavier</div>
-                            <div className="profil-email-info">binnasaxavier@gmail.com</div>
+                            <div className="profil-name">{name}</div>
+                            <div className="profil-email-info">{email}</div>
                         </div>
                         <div className="profil-link" style={{marginTop:"48px"}} >
                             <Link to="/settings" className="Mylink">
