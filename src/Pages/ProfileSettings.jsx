@@ -2,7 +2,7 @@ import { LanguageContext } from "../LanguageContext";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import IconBtn from "../Components/IconBtn";
-import Foto from "../Media/profilFoto.svg"
+import Foto from "../Media/person.webp"
 
 export default function ProfilSettings(){
     return(
@@ -16,7 +16,6 @@ export default function ProfilSettings(){
                     <div className="settings-save" >Saqlash</div>
                     <div className="settings-container">
                         <img src={Foto} alt="" className="settings-img" />
-                        <span className="setting-add-img"> Yangi rasm qo'shish </span>
                         <input className="setting-input" placeholder="ism" />
                         <input className="setting-input" placeholder="email" style={{top:"368px"}}/>
                         <input className="setting-input" placeholder="sinf" style={{top:"444px"}} />

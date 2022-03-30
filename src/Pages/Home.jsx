@@ -4,14 +4,18 @@ import Lupa from "../Icons/lupa.svg";
 import XMark from "../Icons/xmark.svg";
 import { Box } from "@mui/system";
 import BookMini from "../Components/BooksMini";
-import FilePDF2 from "../file3.pdf";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import api from "../api";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import SearchResult from "../Components/SearchResult";
 
 export default function Home(props) {
   const [searchVaule, setSearchValue] = useState("");
+  const [isResultOpen, setIsResultOpen] = useState(false)
   const [books, setBooks] = useState([]);
+  const [genres, setGenres] = useState([]);
+
+  
   props.isSearchActive
     ? disableBodyScroll(document)
     : enableBodyScroll(document);
@@ -19,46 +23,38 @@ export default function Home(props) {
     setSearchValue(e.target.value);
   };
 
-  const api = props.api;
-
   useEffect(() => {
-    api
-      .get("/books", {
-        method: "HEAD",
-        mode: "no-cors",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => {
-        setBooks(res.data.slice(0, 6));
-      });
+    (async () => {
+      const booksRes = await api.get("/books");
+      if (booksRes.status === 200) {
+        setBooks(booksRes.data?.slice(0, 6));
+      }
+
+      const genresRes = await api.get("/genres");
+      if (genresRes.status === 200) {
+        setGenres(genresRes.data);
+      }
+    })();
   }, []);
 
+  const uzunliq = (string)=>{
+    if(string.length>10){
+      return string.slice(0, 13) + "..."
+    } else{
+      return string
+    }
+  }
   const JanrSolo = (props) => {
-    return <div className="janr-solo">{props.text}</div>;
+    return <div className="janr-solo">{uzunliq(props.text)}</div>;
   };
   return (
     <div className="home">
       <LanguageContext.Consumer>
         {(lang) => (
-          <div onClick={props.LMniOchir}>
-            <div
-              className={props.isSearchActive ? "searchbar" : "searchbar "}
-              onChange={handleSearch}
-              onFocus={() => {
-                props.setIsSearchActive(true);
-              }}
-            >
+          <div>
+            <div className="searchbar">
               <img src={Lupa} className="inline-icons" alt="" />
-              <input
-                className={
-                  props.isSearchActive ? "search with-shadov " : "search"
-                }
-                placeholder={lang.qidirish}
-              />
+              <input className="search" placeholder={lang.qidirish} onChange={handleSearch} onFocus={()=>{props.setIsSearchActive(true)}} />
               <img
                 src={XMark}
                 className="search-closer-icon"
@@ -70,19 +66,9 @@ export default function Home(props) {
               />
               <span className="janrla">{lang.janrla}</span>
               <Box component="div" className="janrla-div">
-                <JanrSolo text="hello" />
-                <JanrSolo text="iseurguierg" />
-                <JanrSolo text="helseiubielo" />
-              </Box>
-              <Box component="div" className="janrla-div" sx={{ top: "250px" }}>
-                <JanrSolo text="iseurguierg" />
-                <JanrSolo text="hello" />
-                <JanrSolo text="helseiubielo" />
-              </Box>
-              <Box component="div" className="janrla-div" sx={{ top: "290px" }}>
-                <JanrSolo text="hello" />
-                <JanrSolo text="iseurguierg" />
-                <JanrSolo text="helseiubielo" />
+                {genres.map((genre) => (
+                  <JanrSolo key={genre} text={genre} />
+                ))}
               </Box>
               <div
                 className={
@@ -90,21 +76,11 @@ export default function Home(props) {
                     ? "searchBar searchA"
                     : "searchBar searchN"
                 }
+                style={isResultOpen?{position:"fixed", top:"0px", left:"0px", zIndex:300, height:"100vh", borderRadius:"0px"}:{}}
               >
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="1984" />
-                <SearchResult text="kajerfvakuyev" />
+                {books.map((book) => (
+                    <SearchResult key={book._id} book={book} isResultOpen={isResultOpen} setIsResultOpen={setIsResultOpen} />
+                  ))}
                 <div style={{ marginBottom: "20vh" }}></div>
               </div>
               <Box component="div" className="ContentHome">
@@ -115,14 +91,7 @@ export default function Home(props) {
                 </Link>
                 <div style={{ marginTop: "26px", width: "100%" }}>
                   {books.map((book) => (
-                    <BookMini
-                      key={book._id}
-                      Name={book.name}
-                      genre={book.genre}
-                      Author={book.author}
-                      img={book.image}
-                      file={book.pdf}
-                    />
+                    <BookMini key={book._id} book={book} />
                   ))}
                 </div>
               </Box>

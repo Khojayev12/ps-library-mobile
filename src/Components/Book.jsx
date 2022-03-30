@@ -6,6 +6,7 @@ import { useState } from "react";
 import { LanguageContext } from "../LanguageContext";
 import File from "../file.pdf"
 import PDFviewer from "./PDFviewer";
+import uz from "../App"
 
 export default function Book(props){
     const [ isPdfOpen, setIsPdfOpen] = useState(false)
@@ -55,10 +56,10 @@ export default function Book(props){
             <img src={Xmark} alt="" className="book-xmark" onClick={props.func} />
             {props.isAvailable? <span className="mavjud">Mavjud</span>:<span className="mavjud-emas">Mavjud emas</span>}
             <div className="book-mini-div">
-                <img src={props.img} alt="" className="book-big" />
-                <div className="book-name-head" >{props.name} </div>
-                <div className="book-name-author" > {props.Author} </div>
-                <MenuButton>{props.genre}</MenuButton>
+                <img src={props.book.image} alt="" className="book-big" />
+                <div className="book-name-head" >{lang==uz? props.book.nameUZ:props.book.name} </div>
+                <div className="book-name-author" > {lang==uz?props.book.authorUZ:props.book.author} </div>
+                <MenuButton>{props.book.genre}</MenuButton>
                 <a download className="download-link" onClick={()=>{window.open(props.file, '_top')}} >
                     PDF
                 </a>
@@ -68,7 +69,7 @@ export default function Book(props){
                 <NavbatgaYozilish>Navbatga yozilish</NavbatgaYozilish>
             </div>
         </div>
-        <div className={props.state? "book-bg book-active":" book-bg book-not-active"} onClick={props.func} ></div>
+        <div className={props.state? "book-bg book-active":" book-bg book-not-active"} style={{backgroundColor:props.Col, borderRadius:"0px"}} onClick={props.func} ></div>
         </>)}
         </LanguageContext.Consumer>
     )

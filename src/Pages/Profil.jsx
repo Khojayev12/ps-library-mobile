@@ -2,7 +2,7 @@ import { LanguageContext } from "../LanguageContext";
 import { Box } from "@mui/system";
 import { Link } from "react-router-dom";
 import IconBtn from "../Components/IconBtn";
-import Foto from "../Media/profilFoto.svg"
+import Foto from "../Media/person.webp"
 import ToRIght from "../Icons/toRight.svg"
 
 export default function Profil(){
@@ -16,7 +16,7 @@ export default function Profil(){
                     <span className="profil-header" > Profil </span>
                     <div style={{marginTop:"90px", width:"80vw", marginLeft:"10vw"}}>
                         <div className="profil-img">
-                            <img src={Foto} alt="" className="profil-image"/>
+                            <img src={Foto} alt="" className="profil-img"/>
                         </div>
                         <div className="profil-email">
                             <div className="profil-name">Binnasa Xavier</div>
