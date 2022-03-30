@@ -10,8 +10,8 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import SearchResult from "../Components/SearchResult";
 
 export default function Home(props) {
-  const [searchVaule, setSearchValue] = useState("");
   const [isResultOpen, setIsResultOpen] = useState(false)
+  const [results, setResults] = useState([]);
   const [books, setBooks] = useState([]);
   const [genres, setGenres] = useState([]);
 
@@ -19,8 +19,18 @@ export default function Home(props) {
   props.isSearchActive
     ? disableBodyScroll(document)
     : enableBodyScroll(document);
-  const handleSearch = (e) => {
-    setSearchValue(e.target.value);
+
+  const handleSearch = async (e) => {
+    let text = e.target.value;
+    if (!text) return;
+    const response = await api.get('/books', {
+      params: {
+        name: text
+      }
+    });
+    if (response.status === 200) {
+      setResults(response.data);
+    }
   };
 
   useEffect(() => {
@@ -78,7 +88,7 @@ export default function Home(props) {
                 }
                 style={isResultOpen?{position:"fixed", top:"0px", left:"0px", zIndex:300, height:"100vh", borderRadius:"0px"}:{}}
               >
-                {books.map((book) => (
+                {results.map((book) => (
                     <SearchResult key={book._id} book={book} isResultOpen={isResultOpen} setIsResultOpen={setIsResultOpen} />
                   ))}
                 <div style={{ marginBottom: "20vh" }}></div>

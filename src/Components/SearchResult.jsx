@@ -13,7 +13,7 @@ export default function SearchResult(props){
             {lang=>(
                 <div className="search-result" >
                     <span className="kitob-card-head" onClick={()=>{props.setIsResultOpen(true)}} >
-                        {lang=uz? props.book.nameUZ:props.book.name}
+                        {lang===uz? props.book.nameUZ:props.book.name}
                     </span>
                     {props.isResultOpen?(<>
                         <Book func={close} state={props.isResultOpen} book={props.book} Col="rgba(0, 0, 0, 0.1)" rad="0px" />
