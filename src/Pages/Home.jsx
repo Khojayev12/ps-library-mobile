@@ -5,10 +5,20 @@ import { Box } from "@mui/system";
 import BookMini from "../Components/BooksMini";
 import { useState, useEffect } from "react";
 import api from "../api";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import SearchResult from "../Components/SearchResult";
 
 export default function Home() {
+  const [searchVaule, setSearchValue] = useState("");
   const [books, setBooks] = useState([]);
   const [genres, setGenres] = useState([]);
+  
+  props.isSearchActive
+    ? disableBodyScroll(document)
+    : enableBodyScroll(document);
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
+  };
 
   useEffect(() => {
     (async () => {
