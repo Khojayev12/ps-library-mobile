@@ -1,5 +1,5 @@
 import { LanguageContext } from "../LanguageContext";
-import video from "../Media/video.mp4"
+import video from "../Media/video2.mp4"
 export default function Guide(props) {
   return (
     <LanguageContext.Consumer>
