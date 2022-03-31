@@ -19,12 +19,13 @@ export default function Home(props) {
     ? disableBodyScroll(document)
     : enableBodyScroll(document);
 
-  const handleSearch = async (e) => {
+  const handleSearch = async (e, language) => {
     let text = e.target.value;
     if (!text) return;
+    let key = language === 'uz' ? 'nameUZ' : 'name';
     const response = await api.get("/books", {
       params: {
-        name: text,
+        [key]: text,
       },
     });
     if (response.status === 200) {
@@ -43,6 +44,9 @@ export default function Home(props) {
     (async () => {
       const booksRes = await api.get("/books");
       if (booksRes.status === 200) {
+        if (results.length < 1) {
+          setResults(booksRes.data);
+        }
         setBooks(booksRes.data?.slice(0, 6));
       }
 
@@ -79,7 +83,7 @@ export default function Home(props) {
               <input
                 className="search"
                 placeholder={lang.qidirish}
-                onChange={handleSearch}
+                onChange={e => handleSearch(e, lang.code)}
                 onFocus={() => {
                   props.setIsSearchActive(true);
                 }}
