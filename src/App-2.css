@@ -196,13 +196,14 @@
     padding: 0px;
 }
 .order-book-img{
-    width: 100%;
+    width: 95.5px;
+    height: 140px;
     border-radius: 3px;
     margin: 0px;
     margin-bottom: -15px;
 }
 .order-book-text{
-    width: calc(100% - 90px);
+    width: calc(100% - 150px);
     display: inline-block;
 }
 .order-book-name{
