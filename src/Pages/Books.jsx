@@ -21,10 +21,8 @@ export default function Books(props) {
         )
       }
       const response = await api.get("/books", options);
-      console.log(response)
       if (response.status === 200) {
         setBooks(response.data);
-        console.log(response);
       }
     })();
   });
@@ -49,7 +47,7 @@ export default function Books(props) {
           </Link>
           <div className="for-scroll" style={{ marginTop: "44px" }}>
             {books.map((book) => (
-              <BookMini key={book._id} book={book} />
+              <BookMini key={book._id} book={book} lang={lang} />
             ))}
           </div>
         </div>

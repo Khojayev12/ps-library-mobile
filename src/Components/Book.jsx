@@ -4,7 +4,6 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { LanguageContext } from "../LanguageContext";
 import PDFviewer from "./PDFviewer";
-import uz from "../App";
 
 export default function Book(props) {
   const [isPdfOpen, setIsPdfOpen] = useState(false);
@@ -72,11 +71,11 @@ export default function Book(props) {
             <div className="book-mini-div">
               <img src={props.book.image} alt="" className="book-big" />
               <div className="book-name-head">
-                {lang === uz ? props.book.nameUZ : props.book.name}{" "}
+                {lang.code === 'uz' ? props.book.nameUZ : props.book.name}{" "}
               </div>
               <div className="book-name-author">
                 {" "}
-                {lang === uz ? props.book.authorUZ : props.book.author}{" "}
+                {lang.code === 'uz' ? props.book.authorUZ : props.book.author}{" "}
               </div>
               <br />
               <MenuButton>{props.book.genre}</MenuButton>
@@ -91,7 +90,7 @@ export default function Book(props) {
               </p>
               <div className="book-about-it">
                 {
-                  lang === uz ? props.book.descriptionUZ : props.book.description
+                  lang.code === 'uz' ? props.book.descriptionUZ : props.book.description
                 }
               </div>
               <br />
@@ -105,7 +104,7 @@ export default function Book(props) {
           {isPdfOpen ? (
             <>
               <PDFviewer
-                name={lang === uz ? props.book.nameUZ : props.book.name}
+                name={lang.code === 'uz' ? props.book.nameUZ : props.book.name}
                 state={isPdfOpen}
                 setState={setIsPdfOpen}
                 urlPDF={props.book.pdf}

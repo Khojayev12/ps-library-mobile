@@ -18,6 +18,7 @@ import About from './Pages/About';
 import Guide from './Pages/Guide';
 
 export const uz = {
+  code: 'uz',
   header:"Maktab kutubxonasi",
   qidirish:"Qidirish",
   menuHeader:"Maktab Kutubxonasi",
@@ -58,6 +59,7 @@ export const uz = {
 
 
 export const en = {
+  code: 'en',
   header:"School library",
   qidirish:"Search",
   menuHeader:"School Library",

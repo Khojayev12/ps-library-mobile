@@ -136,7 +136,7 @@ export default function Home(props) {
                 </Link>
                 <div style={{ marginTop: "26px", width: "100%" }}>
                   {books.map((book) => (
-                    <BookMini key={book._id} book={book} />
+                    <BookMini key={book._id} book={book} lang={lang} />
                   ))}
                 </div>
               </Box>
