@@ -52,7 +52,7 @@ export const uz = {
   navbaty:"Navbatga yozilish",
   hozirchayoq:"Hozircha sizda buyurtma mavjud emas.",
   aboutHeader:"Ilova haqida",
-  aboutInfo:"Maktab Kutuxonasi - har bir maktabda tahsil oladigan o'quvchilarga qulaylik yaratish maqsadida ishlab chiqilgan, multifunksional loyiha. Loyihaning asosiy g'oyasi kutubxonaning o'ziga borish o'rniga istalgan joyda, istalgan vaqtda mobil ilova yoki sayt orqali kutubxonada biror bir kitob mavjud yoki yo'qligini, agar yo'q bo'lsa, qachon qaytarilishini bilish va to'g'ridan-to'g'ri kitobga buyurtma berib qo'yish. Bundan tashqari hamma uchun manfaatli bo'lgan ba'zi kitoblarning elektron variantini yuklab olishingiz va undan foydalanishingiz mumkin.",
+  aboutInfo:"Bizning elektron kutubxona ilovamiz hayotimizni osonlashtirish va maktab kutubxonalaridagi qog‘ozlarni raqamlashtirish orqali kamaytirib, ekologiya harakatlariga hissa qo‘shish uchun yaratilgan. U maktab yoki universitet kutubxonalari uchun javob beradi va xavfsiz, juda tez va foydalanish uchun qulay. Siz kutubxonani koʻrib chiqishingiz, oʻzingiz yoqtirgan har qanday tilda sevimli kitobingizni qidirishingiz va unga talaba yoki kutubxonachi sifatida buyurtma berishingiz mumkin, siz kitoblarga buyurtma bergan talabalarni kuzatib borishingiz, ularning soʻrovini maʼqullashingiz yoki rad qilishingiz hamda qoʻshishingiz yoki olib tashlashingiz mumkin. kutubxonangizda yangi kitoblar mavjud. Ilovadan foydalanish juda oddiy, hatto ro'yxatdan o'tish va kirish jarayonlari ham juda oddiy va tushunarli, ammo bu ilova xavfsiz emas degani emas. Talabalar va kutubxonachilarning shaxsiy ma'lumotlari turli xil shifrlash va shifrlash texnologiyalari bilan himoyalangan. Tez orada, bizning rejalarimiz bo'yicha, ilova yanada kengaytiriladi va umid qilamanki, butun mamlakat bo'ylab va hatto butun dunyoda qo'llaniladi.",
   Chiqish:"Chiqish"
 }
 
@@ -92,7 +92,7 @@ export const en = {
   navbaty:"add to que",
   hozirchayoq:"You haven't any orders",
   aboutHeader:"About app",
-  aboutInfo:"The School Library is a multifunctional project designed to create convenience for students in each school. The main idea of the project is to find out if there is a book in the library at any time, anywhere, through a mobile application or site, instead of going to the library itself, and if so, when to return it and directly -order the right book. You can also download and use the electronic version of some books that are of interest to everyone.",
+  aboutInfo:"Our app E-library is made to make our lives easier and contribute to ecology movements by reducing the amount of paperwork in school libraries by digitalizing it. It is suited for school or university libraries and it is secure, quite fast and comfortable to use. You can browse the library, search for your favourite book in any of your language of preference, and order it as a student, or as a librarian, you can keep track of students who ordered books, approve or reject their request and add or remove new books available in your library. Usage of the app is quite simple, even the registration and login processes are really basic and easy to understand, but it doesn't mean the app isn't secure. The personal information of students and librarians are protected by various encrypting and decrypting technologies. Soon, according to our plans, the app will be expanded even more and hopefully will be used nationwide, and even worldwide.",
   Chiqish:"Exit"
 }
 

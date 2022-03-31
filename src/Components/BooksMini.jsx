@@ -1,14 +1,19 @@
 import { Box } from "@mui/system";
+import { ThemeContext } from "@react-pdf-viewer/core";
 import { useState } from "react";
 import Book from "./Book";
+import uz from "../App"
 
 export default function BookMini(props) {
   const [isBookOpen, setIsBookOpen] = useState(false);
+  const [name, setName] = useState("")
+  const [author, setAuthor] = useState('')
   const close = () => {
     setIsBookOpen(false);
   };
   return (
-    <>
+    <ThemeContext.Consumer>
+      {lang =>(<>
       <Box
         component="div"
         sx={{
@@ -31,27 +36,29 @@ export default function BookMini(props) {
             alt=""
             style={{ zIndex: isBookOpen ? "100" : "160" }}
           />
-        </div>
+        </div>{setName(lang===uz? props.book.nameUZ: props.book.name)}
         <span
           className="kitob-card-head"
           style={{ zIndex: isBookOpen ? "100" : "160" }}
         >
           {" "}
-          {props.book.name?.length > 10
-            ? props.book.name?.slice(0, 10) + "..."
-            : props.book.name}{" "}
+          {name?.length > 10
+            ? name?.slice(0, 10) + "..."
+            : name}{" "}
         </span>
         <span
           className="kitob-card-footer"
           style={{ zIndex: isBookOpen ? "100" : "160" }}
         >
           {" "}
-          {props.book.author?.length > 10
-            ? props.book.author?.slice(0, 10) + "..."
-            : props.book.author}{" "}
+          
+          {setAuthor(lang===uz? props.book.authorUZ: props.book.author)}
+          {author?.length > 10
+            ? author?.slice(0, 10) + "..."
+            : author}{" "}
         </span>
       </Box>
-      <Book func={close} state={isBookOpen} book={props.book} />
-    </>
+      <Book func={close} state={isBookOpen} book={props.book} /> </>)}
+    </ThemeContext.Consumer>
   );
 }
