@@ -25,7 +25,7 @@ export default function Books(props) {
         setBooks(response.data);
       }
     })();
-  }, []);
+  }, [search]);
   return (
     <LanguageContext.Consumer>
       {(lang) => (
