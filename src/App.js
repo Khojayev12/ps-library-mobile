@@ -52,7 +52,7 @@ export const uz = {
   navbaty:"Navbatga yozilish",
   hozirchayoq:"Hozircha sizda buyurtma mavjud emas.",
   aboutHeader:"Ilova haqida",
-  aboutInfo:"",
+  aboutInfo:"Maktab Kutuxonasi - har bir maktabda tahsil oladigan o'quvchilarga qulaylik yaratish maqsadida ishlab chiqilgan, multifunksional loyiha. Loyihaning asosiy g'oyasi kutubxonaning o'ziga borish o'rniga istalgan joyda, istalgan vaqtda mobil ilova yoki sayt orqali kutubxonada biror bir kitob mavjud yoki yo'qligini, agar yo'q bo'lsa, qachon qaytarilishini bilish va to'g'ridan-to'g'ri kitobga buyurtma berib qo'yish. Bundan tashqari hamma uchun manfaatli bo'lgan ba'zi kitoblarning elektron variantini yuklab olishingiz va undan foydalanishingiz mumkin.",
   Chiqish:"Chiqish"
 }
 
@@ -92,7 +92,7 @@ export const en = {
   navbaty:"add to que",
   hozirchayoq:"You haven't any orders",
   aboutHeader:"About app",
-  aboutInfo:"",
+  aboutInfo:"The School Library is a multifunctional project designed to create convenience for students in each school. The main idea of the project is to find out if there is a book in the library at any time, anywhere, through a mobile application or site, instead of going to the library itself, and if so, when to return it and directly -order the right book. You can also download and use the electronic version of some books that are of interest to everyone.",
   Chiqish:"Exit"
 }
 
