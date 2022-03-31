@@ -14,7 +14,7 @@ import { useState } from "react";
 import Person from "../Icons/person.svg"
 import Sozlama from "../Icons/sozlama.svg"
 import Chiqish from "../Icons/chiqish.svg"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const MenuButton = styled(Button)(() => ({
     width:"90%",
@@ -50,6 +50,14 @@ export default function Menu(){
     const handelLMenu = ()=>{
         setIsLMenuOpen(!isLMenuOpen)
     }
+
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('token')
+        navigate('/start');
+    }
+
     return(
         <LanguageContext.Consumer >
             {lang => (<>
@@ -105,10 +113,10 @@ export default function Menu(){
                     <span className="Lmenu-span">{lang.Sozlamalar}</span> </Link>
                     <hr className="ML-hr" />
                 </div>
-                <Link to="/start" className="Mylink" > <div className="Lmenu-line" onClick={()=>{setIsLMenuOpen(false)}} >
+                <span onClick={handleLogout} className="Mylink" > <div className="Lmenu-line" onClick={()=>{setIsLMenuOpen(false)}} >
                     <img src={Chiqish} alt="" className="Lmenu-img" />
                     <span className="Lmenu-span" >{lang.Chiqish}</span>
-                </div></Link>
+                </div></span>
             </div>
             <Box component="div" className={isLMenuOpen? "Lmenu-e-open" : "LMenu-e-closed"}></Box>
             <Box component="div" className={isMenuOpen?"blur-e active-e" : "blur-e not-active-e"} ></Box>
