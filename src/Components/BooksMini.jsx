@@ -46,7 +46,9 @@ export default function BookMini(props) {
           style={{ zIndex: isBookOpen ? "100" : "160" }}
         >
           {" "}
-          {props.book.author}{" "}
+          {props.book.author?.length > 10
+            ? props.book.author?.slice(0, 10) + "..."
+            : props.book.author}{" "}
         </span>
       </Box>
       <Book func={close} state={isBookOpen} book={props.book} />

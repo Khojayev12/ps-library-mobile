@@ -78,6 +78,7 @@ export default function Book(props) {
                 {" "}
                 {lang === uz ? props.book.authorUZ : props.book.author}{" "}
               </div>
+              <br />
               <MenuButton>{props.book.genre}</MenuButton>
               <p href="#"
                 download
@@ -89,21 +90,13 @@ export default function Book(props) {
                 PDF
               </p>
               <div className="book-about-it">
-                srgsergs serg serg segrsedrgsr sergsergse sergsergse sedrgsedrgs
-                sergsedrgsered serhsedrthsre esdrtsreghs serhgserghesr sergsgrt
-                serthserg erthsrethsg srtghsresghre srhgsrg sredgrsd srthsrhs
-                srhtsr srgsergs serg serg segrsedrgsr sergsergse sergsergse
-                sedrgsedrgs sergsedrgsered serhsedrthsre esdrtsreghs
-                serhgserghesr sergsgrt serthserg erthsrsrgsergs serg serg
-                segrsedrgsr sergsergse sergsergse sedrgsedrgs sergsedrgsered
-                serhsedrthsre esdrtsreghs serhgserghesr sergsgrt serthserg
-                erthsrsrgsergs serg serg segrsedrgsr sergsergse sergsergse
-                sedrgsedrgs sergsedrgsered serhsedrthsre esdrtsreghs
-                serhgserghesr sergsgrt serthserg erthsrsrgsergs serg serg
-                segrsedrgsr sergsergse sergsergse sedrgsedrgs sergsedrgsered
-                serhsedrthsre esdrtsreghs serhgserghesr sergsgrt serthserg
-                erthsr
+                {
+                  lang === uz ? props.book.descriptionUZ : props.book.description
+                }
               </div>
+              <br />
+              <br />
+              <br />
             </div>
             <div className="book-navbat">
               <NavbatgaYozilish>{lang.navbaty}</NavbatgaYozilish>
