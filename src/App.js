@@ -91,7 +91,7 @@ export const en = {
   Saqlash:"Save",
   Mavjud:"Available",
   MavjudEmas:"Not available",
-  navbaty:"add to que",
+  navbaty:"Join waitlist",
   hozirchayoq:"You haven't any orders",
   aboutHeader:"About app",
   aboutInfo:"Our app E-library is made to make our lives easier and contribute to ecology movements by reducing the amount of paperwork and time wasted in school libraries by digitalizing it. It is suited for school or university libraries and it is secure, quite fast and comfortable to use. The main goal of our app is to make management easy for various organizations like schools and universities, as well as students. You can browse the library, search for your favourite book in any of your language of preference, and order it as a student without wasting time and grab it from the library without the paperwork involved, or as a librarian, you can keep track of students who ordered books, approve or reject their request and add or remove new books available in your library. Usage of the app is quite simple, even the registration and login processes are really basic and easy to understand, but it doesn't mean the app isn't secure. The personal information of students and librarians are protected by various encrypting and decrypting technologies. Soon, according to our plans, the app will be expanded even more and hopefully will be used nationwide, and even worldwide.",
@@ -115,8 +115,8 @@ function App() {
           <Route path='/all-books' element={<Books setIsSearchActive={setIsSearchActive} api={api} />}  />
           <Route path='/orders' element={<Orders api={api} />}/>
           <Route path='/change-lang' element={<ChangeLang setUzbek={()=>{setLang(uz)}} setEnglish={()=>{setLang(en)}} api={api} />}/>
-          <Route path='/settings' element={<ProfilSettings api={api} />}/>
-          <Route path='/profile' element={<Profil api={api} />}/>
+          <Route path='/settings' element={<Profil api={api} />}/>
+          <Route path='/profile' element={<ProfilSettings api={api} />}/>
           <Route path='/register' element={<SignUp api={api} />}/>
           <Route path='/login' element={<Login api={api} />}/>
           <Route path='/start' element={<Start api={api} />}/>

@@ -54,7 +54,7 @@ export default function BookMini(props) {
             : author}{" "}
         </span>
       </Box>
-      <Book func={close} state={isBookOpen} book={props.book} />
+      <Book func={close} state={isBookOpen} book={props.book} hide={close} />
     </>
   );
 }

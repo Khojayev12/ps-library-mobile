@@ -4,9 +4,25 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import { LanguageContext } from "../LanguageContext";
 import PDFviewer from "./PDFviewer";
+import api from "../api";
 
 export default function Book(props) {
   const [isPdfOpen, setIsPdfOpen] = useState(false);
+  
+  const handleOrder = async () => {
+    let data = {
+      bookId: props.book.bookID,
+    };
+    const response = await api.post('/orders/new', data, {
+      headers: {
+        "x-auth-token": localStorage.getItem("token")
+      }
+    });
+    if (response.status === 201) {
+      props.hide();
+    }
+  }
+
   const MenuButton = styled(Button)((filled) => ({
     textAlign: "center",
     padding: "5px 34px",
@@ -63,7 +79,7 @@ export default function Book(props) {
               className="book-xmark"
               onClick={props.func}
             />
-            {props.isAvailable ? (
+            {props.book.isAvailable ? (
               <span className="mavjud">{lang.Mavjud}</span>
             ) : (
               <span className="mavjud-emas">{lang.MavjudEmas}</span>
@@ -98,7 +114,7 @@ export default function Book(props) {
               <br />
             </div>
             <div className="book-navbat">
-              <NavbatgaYozilish>{lang.navbaty}</NavbatgaYozilish>
+              <NavbatgaYozilish onClick={handleOrder}>{lang.navbaty}</NavbatgaYozilish>
             </div>
           </div>
           {isPdfOpen ? (

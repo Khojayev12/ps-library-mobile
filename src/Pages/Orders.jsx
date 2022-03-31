@@ -22,7 +22,6 @@ export default function Orders() {
       }
     })();
   }, []);
-console.log(orders)
   return (
     <LanguageContext.Consumer>
       {(lang) => (
