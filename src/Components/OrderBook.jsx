@@ -46,10 +46,17 @@ export default function OrderBook(props) {
             <img src={book.image} alt="" className="order-book-img" />
           </div>
           <div className="order-book-text">
-            <div className="order-book-name"> {languages===uz?  book.nameUZ:book.name} </div>
-            <div className="order-book-author"> {languages===uz?  book.authorUZ:book.author} </div>
+            <div className="order-book-name">
+              {" "}
+              {props.lang === "uz" ? book.nameUZ : book.name}{" "}
+            </div>
+            <div className="order-book-author">
+              {" "}
+              {props.lang === "uz" ? book.authorUZ : book.author}{" "}
+            </div>
             <span className="order-book-date">
-              Oxirgi muddat: {new Date(props.order.until).toLocaleDateString()}{" "}
+              {props.lang === "uz" ? "Oxirgi muddat" : "Until date"}:{" "}
+              {new Date(props.order.until).toLocaleDateString()}{" "}
             </span>
             <span className="order-book-status">
               {" "}
@@ -57,10 +64,16 @@ export default function OrderBook(props) {
               <span style={{ color: props.stColor }}>
                 {" "}
                 {props.order.isAccepted
-                  ? "Qabul qilingan"
+                  ? props.lang === "uz"
+                    ? "Qabul qilingan"
+                    : "Accepted"
                   : props.order.isCancelled
-                  ? "Bekor qilingan"
-                  : "Yuborilgan"}{" "}
+                  ? props.lang === "uz"
+                    ? "Bekor qilingan"
+                    : "Cancelled"
+                  : props.lang === "uz"
+                  ? "Yuborilgan"
+                  : "Ordered"}{" "}
               </span>{" "}
             </span>
             <BookBtnOrder
@@ -69,7 +82,7 @@ export default function OrderBook(props) {
               }}
             >
               {" "}
-              Kitob haqida{" "}
+              {props.lang === "uz" ? "Kitob haqida" : "About this book"}{" "}
             </BookBtnOrder>
           </div>
           <Book book={book} func={close} state={isBookOpen} />

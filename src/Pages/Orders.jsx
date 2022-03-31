@@ -46,7 +46,7 @@ export default function Orders() {
               </>
             )}
             {orders.map((order) => (
-              <OrderBook key={order._id} order={order} />
+              <OrderBook key={order._id} order={order} lang={lang.code} />
             ))}
             {/* <OrderBook name={"Stiv Jobs"} author="Uolter Ayzekson" date="2/10/2022" status={"Yuborilgan"} rasm={Kitob15} stColor="rgb(223, 165, 0)" /> */}
             {/* <OrderBook name={"Stiv Jobs"} author="Uolter Ayzekson" date="2/10/2022" status={"Qabul qilindi"} rasm={Kitob15} stColor="rgb(22, 195, 30)" />
