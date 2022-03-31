@@ -15,7 +15,7 @@ export default function BookMini(props) {
           width: "100px",
           display: "inline-block",
           marginLeft: "18px",
-          marginRight: "18px",
+          marginRight: "0px",
           marginTop: "18px",
           padding: "0px",
           zIndex: isBookOpen ? "100" : "160",
