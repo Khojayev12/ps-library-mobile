@@ -52,7 +52,8 @@ export const uz = {
   navbaty:"Navbatga yozilish",
   hozirchayoq:"Hozircha sizda buyurtma mavjud emas.",
   aboutHeader:"Ilova haqida",
-  aboutInfo:""
+  aboutInfo:"",
+  Chiqish:"Chiqish"
 }
 
 
@@ -91,7 +92,8 @@ export const en = {
   navbaty:"add to que",
   hozirchayoq:"You haven't any orders",
   aboutHeader:"About app",
-  aboutInfo:""
+  aboutInfo:"",
+  Chiqish:"Exit"
 }
 
 const api = axios.create({

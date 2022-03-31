@@ -97,17 +97,17 @@ export default function Menu(){
             <div className={isLMenuOpen? "LMenu L-open" : "LMenu L-closed"} >
                 <div className="Lmenu-line" onClick={()=>{setIsLMenuOpen(false)}} > <Link to="/profile" className="Mylink" >
                     <img src={Person} alt="" className="Lmenu-img"/>
-                    <span className="Lmenu-span">Profil</span></Link>
+                    <span className="Lmenu-span">{lang.profil}</span></Link>
                     <hr className="ML-hr" style={{height:"0px"}} /> 
                 </div>
                 <div className="Lmenu-line" onClick={()=>{setIsLMenuOpen(false)}} > <Link to="/settings" className="Mylink" > 
                     <img src={Sozlama} alt="" className="Lmenu-img"/>
-                    <span className="Lmenu-span">Sozlamalar</span> </Link>
+                    <span className="Lmenu-span">{lang.Sozlamalar}</span> </Link>
                     <hr className="ML-hr" />
                 </div>
                 <Link to="/start" className="Mylink" > <div className="Lmenu-line" onClick={()=>{setIsLMenuOpen(false)}} >
                     <img src={Chiqish} alt="" className="Lmenu-img" />
-                    <span className="Lmenu-span" >Chiqish</span>
+                    <span className="Lmenu-span" >{lang.Chiqish}</span>
                 </div></Link>
             </div>
             <Box component="div" className={isLMenuOpen? "Lmenu-e-open" : "LMenu-e-closed"}></Box>
