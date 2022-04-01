@@ -34,7 +34,7 @@ export default function Profil(){
                             <div className="profil-email-info">{email}</div>
                         </div>
                         <div className="profil-link" style={{marginTop:"48px"}} >
-                            <Link to="/settings" className="Mylink">
+                            <Link to="/profile" className="Mylink">
                             <span className="profil-link-menu"> {lang.profilSozlash} </span>
                             <img src={ToRIght} alt="" className="profil-link-icon" />
                             </Link>

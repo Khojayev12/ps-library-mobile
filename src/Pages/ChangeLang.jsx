@@ -11,7 +11,7 @@ export default function ChangeLang(props){
         <LanguageContext.Consumer>
         {lang=>(
             <div className="change-lang-page">
-                <Link to="/profile"> <Box component="div" className="back-icon" style={{top:"24px"}} >
+                <Link to="/settings"> <Box component="div" className="back-icon" style={{top:"24px"}} >
                     <IconBtn />
                 </Box></Link>
                 <span className="profil-header" > {lang.settings} </span>
