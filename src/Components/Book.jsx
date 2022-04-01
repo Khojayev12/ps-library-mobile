@@ -8,20 +8,20 @@ import api from "../api";
 
 export default function Book(props) {
   const [isPdfOpen, setIsPdfOpen] = useState(false);
-  
+
   const handleOrder = async () => {
     let data = {
       bookId: props.book.bookID,
     };
-    const response = await api.post('/orders/new', data, {
+    const response = await api.post("/orders/new", data, {
       headers: {
-        "x-auth-token": localStorage.getItem("token")
-      }
+        "x-auth-token": localStorage.getItem("token"),
+      },
     });
     if (response.status === 201) {
       props.hide();
     }
-  }
+  };
 
   const MenuButton = styled(Button)((filled) => ({
     textAlign: "center",
@@ -87,40 +87,49 @@ export default function Book(props) {
             <div className="book-mini-div">
               <img src={props.book.image} alt="" className="book-big" />
               <div className="book-name-head">
-                {lang.code === 'uz' ? props.book.nameUZ : props.book.name}{" "}
+                {lang.code === "uz" ? props.book.nameUZ : props.book.name}{" "}
               </div>
               <div className="book-name-author">
                 {" "}
-                {lang.code === 'uz' ? props.book.authorUZ : props.book.author}{" "}
+                {lang.code === "uz"
+                  ? props.book.authorUZ
+                  : props.book.author}{" "}
               </div>
               <br />
               <MenuButton>{props.book.genre}</MenuButton>
-              <p href="#"
-                download
-                className="download-link"
-                onClick={() => {
-                  setIsPdfOpen(true);
-                }}
-              >
-                PDF
-              </p>
+              {
+                props.book.pdf
+                &&
+                <p
+                  href="#"
+                  download
+                  className="download-link"
+                  onClick={() => {
+                    setIsPdfOpen(true);
+                  }}
+                >
+                  PDF
+                </p>
+              }
               <div className="book-about-it">
-                {
-                  lang.code === 'uz' ? props.book.descriptionUZ : props.book.description
-                }
+                {lang.code === "uz"
+                  ? props.book.descriptionUZ
+                  : props.book.description}
               </div>
               <br />
               <br />
               <br />
             </div>
             <div className="book-navbat">
-              <NavbatgaYozilish onClick={handleOrder}>{lang.navbaty}</NavbatgaYozilish>
+              <NavbatgaYozilish onClick={handleOrder}>
+                {lang.navbaty}
+              </NavbatgaYozilish>
             </div>
           </div>
           {isPdfOpen ? (
             <>
               <PDFviewer
-                name={lang.code === 'uz' ? props.book.nameUZ : props.book.name}
+                name={lang.code === "uz" ? props.book.nameUZ : props.book.name}
                 state={isPdfOpen}
                 setState={setIsPdfOpen}
                 urlPDF={props.book.pdf}
